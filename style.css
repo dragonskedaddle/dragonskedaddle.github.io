@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif', serif;;
+    box-sizing: border-box;
+    color: black;
+}
+body, html{
+    position: relative;
+    background-color: #E8E5DC;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+nav{
+    font-size: 1.5rem;
+    background-color: #E8E5DC;
+}
+.section{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.home{
+    padding: 1rem;
+}
+.home svg{
+    width: 100%;
+}
+#narrow{
+    display: none;
+}
+.work{
+    gap: 2em;
+}
+.project{
+    width: 100%;
+    display: flex;
+    gap: 1.25rem;
+    align-items: center;
+    justify-content: center;
+}
+.orange{
+    flex-direction: row-reverse;
+}
+.orange > :last-child{ /*regular last child doesnt work because of varying*/
+    transform: scaleX(-1);
+}
+.project img{
+    width: 100%;
+    height: 65%;
+}
+.img-spacer{
+    display: flex;
+    align-items: center;
+    width: 10%;
+    height: 100%;
+}
+.project-display{
+    position: relative;
+    width: 30%;
+    height: 100%;
+}
+.project-display img{
+    aspect-ratio: 16/9;
+    max-width: 100%;
+    height: auto;
+    opacity: 1;
+}
+.project-display h1{
+    user-select: none;
+    font-size: 1rem;
+    color: white;
+    background-color: #403D39;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    margin: auto;
+    inset: 0;
+    text-align: center;
+    transition: .5s;
+    opacity: 0;
+}
+.project-display > h1:hover{
+    opacity: 1;
+    background-color: rgba(64, 61, 57, .9)
+}
+
+.project-desc{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+.project-title{
+    font-size: 1.75rem;
+}
+.project-body{
+    font-size: 1rem;
+}
+.form{
+    height: 60vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    gap: 0.25rem;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    gap: 1rem;
+}
+.messager{
+    width: 80%;
+}
+.messager > h1{
+    display: flex;
+    gap: .25rem;
+    align-items: flex-end;
+}
+.messager > h1 > img{
+    height: 5rem;
+}
+.messager input[type="submit"]{
+    display: block;
+    background-color: #CCC5B9;
+    margin: 0 auto;
+    width: 50%;
+    transition: .5s;
+}
+.messager input[type="submit"]:hover{
+    background-color: #868179;
+    color: #fff;
+}
+.messager input[type="submit"]:active{
+    background-color: #403D39;
+}
+textarea{
+    resize: none;
+}
+.form-control:focus {
+    box-shadow: none;
+    border: black;
+}
+.socials{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    gap: 1.5rem;
+}
+.socials svg{
+    width: 8%;
+    height: auto;
+}
+.socials > svg > path{
+    fill: #252422;
+    transition: .5s;
+}
+.socials > svg:hover path{
+    fill: #868179;
+}
+.socials > svg:active path{
+    fill: #403D39;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #CCC5B9;
+    background-clip: padding-box;
+    border-radius: 10px;
+    transition: 1s;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #868179;
+}
+
+@media screen and (max-width: 576px){
+    .home svg{
+        height: 100%;
+    }
+    #wide{
+        display: none;
+    }
+    #narrow{
+        display: block;
+    }
+    .work{
+        height: fit-content;
+        gap: 1em;
+    }
+    .project{
+        flex-direction: column;
+        gap: .75rem;
+    }
+    .project-display{
+        width: 90%;
+    }
+    .project-desc{
+        width: 80%;
+    }
+    .project-title{
+        font-size: 1.5rem;
+    }
+    .project-body{
+        font-size: 1rem;
+    }
+    .img-spacer{
+        width: auto;
+        height: 7em;
+    }
+    .project > :last-child{
+        display: none;
+    }
+    .form{
+        height: 70vh;
+    }
+    .form svg{
+        width: 30%;
+    }
+    .messager{
+        width: 100%;
+    }
+    .messager > h1{
+        font-size: 1.5rem;
+        gap: .1rem;
+    }
+    .messager input[type="submit"]{
+        padding: 1rem;
+    }
+    .socials svg{
+        width: 20%;
+        height: auto;
+    }
+}
