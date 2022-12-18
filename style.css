@@ -36,6 +36,7 @@ nav{
 }
 .work{
     gap: 2em;
+    height: auto;
 }
 .project{
     width: 100%;
